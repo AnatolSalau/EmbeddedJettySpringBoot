@@ -23,7 +23,7 @@ public class EmbeddedJettySpringBootApplication extends Application {
     private Parent windowOneRoot;
 
     public static void main(String[] args) {
-        launch(args);
+        Application.launch(args);
     }
 
     @Override
