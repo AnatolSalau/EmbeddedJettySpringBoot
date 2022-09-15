@@ -14,7 +14,6 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
 public class EmbeddedJettySpringBootApplication extends Application {
-
     private ConfigurableApplicationContext configurableApplicationContext;
 
     public static void main(String[] args) {
@@ -24,7 +23,6 @@ public class EmbeddedJettySpringBootApplication extends Application {
     @Override
     public void init() throws Exception {
         configurableApplicationContext = SpringApplication.run(EmbeddedJettySpringBootApplication.class);
-
     }
 
     @Override
@@ -33,13 +31,11 @@ public class EmbeddedJettySpringBootApplication extends Application {
         Button btn = new Button();
         btn.setText("Say 'Hello World'");
         btn.setOnAction(new EventHandler<ActionEvent>() {
-
             @Override
             public void handle(ActionEvent event) {
                 System.out.println("Hello World!");
             }
         });
-
         StackPane root = new StackPane();
         root.getChildren().add(btn);
         primaryStage.setScene(new Scene(root, 300, 250));
