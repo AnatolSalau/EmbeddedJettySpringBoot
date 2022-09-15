@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.WebView?>
+<StackPane  fx:id="windowOneStackPane"
+            xmlns="http://javafx.com/javafx/18"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.embeddedjettyspringboot.javafx_controllers.WindowOneController">
+    <children>
+        <WebView fx:id="windowOne"/>
+    </children>
+</StackPane>
