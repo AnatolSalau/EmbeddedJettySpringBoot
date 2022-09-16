@@ -1,4 +1,4 @@
-export default class User {
+class User {
 
     #id;
     #name;
@@ -9,16 +9,5 @@ export default class User {
         this.#name = name;
         this.#secondName = secondName;
     }
-
-    get id() {
-        return this.#id;
-    }
-
-    get name() {
-        return this.#name;
-    }
-
-    get secondName() {
-        return this.#secondName;
-    }
 }
+export default User;
