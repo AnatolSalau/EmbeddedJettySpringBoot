@@ -2,16 +2,11 @@ package com.example.embeddedjettyspringboot;
 
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.SpringApplicationShutdownHandlers;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
@@ -19,7 +14,9 @@ import java.io.IOException;
 
 @SpringBootApplication
 public class EmbeddedJettySpringBootApplication extends Application {
+    //Application context
     private ConfigurableApplicationContext configurableApplicationContext;
+    //JavaFx window one root
     private Parent windowOneRoot;
 
     public static void main(String[] args) {
@@ -28,10 +25,14 @@ public class EmbeddedJettySpringBootApplication extends Application {
 
     @Override
     public void init() throws Exception {
+        //Run Spring context
         configurableApplicationContext = SpringApplication.run(EmbeddedJettySpringBootApplication.class);
+        //Get fxml
         FXMLLoader windowOneFXML = new FXMLLoader(getClass().getResource("/fxml/window_one.fxml"));
+        //load JavaFX controllers which load like beans from context
         windowOneFXML.setControllerFactory(configurableApplicationContext::getBean);
 
+        //We must run desktope window root in new thread becouse if we don't make it -> we get JavaFx thread error
         Platform.runLater(new Runnable() {
             @Override
             public void run() {

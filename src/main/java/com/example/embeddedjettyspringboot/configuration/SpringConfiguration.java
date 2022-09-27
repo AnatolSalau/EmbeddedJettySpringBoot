@@ -1,4 +1,4 @@
-package com.example.embeddedjettyspringboot.configurtion;
+package com.example.embeddedjettyspringboot.configuration;
 
 import org.springframework.context.annotation.Configuration;
 

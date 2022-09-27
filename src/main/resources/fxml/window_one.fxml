@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.web.WebView?>
 <StackPane  fx:id="windowOneStackPane"
