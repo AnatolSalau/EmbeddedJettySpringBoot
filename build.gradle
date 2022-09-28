@@ -4,7 +4,10 @@ plugins {
     id 'java'
 }
 configurations {
-    jar.archiveName = 'EmbeddedJettySpringBoot.jar'
+    jar.archiveName = 'EmbeddedTomcatSpringBoot.jar'
+}
+bootJar {
+    archiveFileName = 'EmbeddedTomcatSpringBoot.jar'
 }
 group = 'com.example'
 version = '0.0.1'
@@ -15,7 +18,8 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-jetty'
+    implementation 'org.springframework.boot:spring-boot-autoconfigure'
+    implementation 'org.springframework.boot:spring-boot-starter-tomcat'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
