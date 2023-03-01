@@ -55,7 +55,9 @@ public class EmbeddedJettySpringBootApplication extends Application {
 
     @Override
     public void stop() throws Exception {
-        //Stop spring boot application
-                configurableApplicationContext.close();
+
+            //Stop spring boot application
+            configurableApplicationContext.close();
+
     }
 }
